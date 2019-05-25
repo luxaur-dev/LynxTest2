@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Test 2</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Addition of numbers">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href='css/css.css' rel='stylesheet' type='text/css'>
+	<script src="js/posConverter.js"></script>
+	<script src="js/chessKnight.js"></script>
+	<script src="js/posReturn.js"></script>
+	<script src="js/hide.js"></script>
+</head>
+<body>
+<div class="flex-container">
+	<div class="row">
+		<!-- Поле ввода позиции фигуры -->
+		<form>
+			Исходное положение:<br>
+			<input id="startPos" type="text" value="D4"><br><br>
+		</form>
+		<button onclick="posConverter();">ОК</button>
+	</div>
+	<!-- Всплывающее окно, отображающее результат -->
+	<div id="popup" class="popup">
+		Возможные варианты хода:<br>
+		<p id="result">0</p>
+		<button onclick="hide();"id="okbutton">OK</button>
+    
+	</div>
+</div>
+</body>
+</html>

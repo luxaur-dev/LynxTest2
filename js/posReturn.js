@@ -1,8 +1,12 @@
 // Возвращает строку результата
-function posReturn(...arr){
-  let xGood = arr[0];
+
+const resultText = document.getElementById('resulttext');
+
+function posReturn(...arr) {
+  const xGood = arr[0];
+  const yFinalPos = arr[1];
+
   let xFinalPos = [];
-  let yFinalPos = arr[1];
   let resultArr = [];
   
   for (let i = 0; i < xGood.length; i++) {
@@ -10,9 +14,17 @@ function posReturn(...arr){
     xFinalPos.push(String.fromCharCode(65 + xGood[i]));
     resultArr.push(xFinalPos[i] + yFinalPos[i]);
   }
-  //console.log(xGood, xFinalPos, yFinalPos);
-  let result = resultArr.join(' ');
-  document.getElementById("result").innerHTML = result;
-  document.getElementById("popup").style.display = "block";
-  console.log(result)
+
+  const listOfMoves = resultArr.join(' ');
+
+  if (resultArr.length === 0) {
+    popupText.innerHTML = 'Введите верную позицию.';
+    resultText.innerHTML = '';
+    popupWindow.style.display = "block";
+  }
+  else {
+    popupText.innerHTML = 'Результат:';
+    resultText.innerHTML = listOfMoves;
+    popupWindow.style.display = "block";
+  }
 }
